@@ -1,6 +1,7 @@
-# Base django reqs
+# Django reqs
 Django>=4.0,<4.1
 psycopg2>=2.8
+whitenoise==6.0.0
 
 # Env tools
 pip-tools==6.5.1

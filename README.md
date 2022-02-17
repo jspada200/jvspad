@@ -26,5 +26,5 @@ Next, run
 
 ```
 docker-compose run web pip-compile
-docker-compose run web python -m pip install -r requierments.txt
+docker-compose build
 ```
