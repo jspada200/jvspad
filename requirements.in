@@ -1,0 +1,7 @@
+# Base django reqs
+Django>=4.0,<4.1
+psycopg2>=2.8
+
+# Env tools
+pip-tools==6.5.1
+pip-lock==2.8.1
