@@ -1,7 +1,12 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from rest_framework import viewsets
+from .models import Post
+from .serializers import PostSerializer
 
-# Create your views here.
-class HomePageView(TemplateView):
-    template_name='home.html'
-    
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    A simple ViewSet for viewing and editing accounts.
+    """
+
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
