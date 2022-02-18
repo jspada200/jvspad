@@ -9,15 +9,23 @@ asgiref==3.5.0
 click==8.0.3
     # via pip-tools
 django==4.0.2
+    # via
+    #   -r requirements.in
+    #   djangorestframework
+djangorestframework==3.13.1
     # via -r requirements.in
 pep517==0.12.0
     # via pip-tools
+pillow==9.0.1
+    # via -r requirements.in
 pip-lock==2.8.1
     # via -r requirements.in
 pip-tools==6.5.1
     # via -r requirements.in
 psycopg2==2.9.3
     # via -r requirements.in
+pytz==2021.3
+    # via djangorestframework
 sqlparse==0.4.2
     # via django
 tomli==2.0.1
