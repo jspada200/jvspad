@@ -90,7 +90,18 @@
   flex-wrap: wrap;
   max-width: 800px;
 }
+.darkenbg {
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 4rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
 
+.card {
+  padding: 1rem;
+}
+
+/* 
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -119,7 +130,7 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
-}
+} */
 
 .logo {
   height: 1em;
