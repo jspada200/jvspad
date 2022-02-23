@@ -1,5 +1,10 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
+\
+import remarkGfm from "remark-gfm";
+import a11yEmoji from "@fec/remark-a11y-emoji";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula as dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function BlogPostLink({
   id,
@@ -30,7 +35,30 @@ export default function BlogPostLink({
                 </h2>
               </Card.Title>
             </Card.ImgOverlay>
-            <Card.Text>{body}</Card.Text>
+            <Card.Text>
+              <ReactMarkdown
+                children={body}
+                remarkPlugins={[remarkGfm, a11yEmoji]}
+                components={{
+                  code({ node, inline, className, children, ...props }) {
+                    const match = /language-(\w+)/.exec(className || "");
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        children={String(children).replace(/\n$/, "")}
+                        style={dark}
+                        language={match[1]}
+                        PreTag="div"
+                        {...props}
+                      />
+                    ) : (
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              />
+            </Card.Text>
           </>
         ) : (
           <>
@@ -46,7 +74,30 @@ export default function BlogPostLink({
                 </Container>
               </h2>
             </Card.Title>
-            <Card.Text>{body}</Card.Text>
+            <Card.Text>
+              <ReactMarkdown
+                children={body}
+                remarkPlugins={[remarkGfm, a11yEmoji]}
+                components={{
+                  code({ node, inline, className, children, ...props }) {
+                    const match = /language-(\w+)/.exec(className || "");
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        children={String(children).replace(/\n$/, "")}
+                        style={dark}
+                        language={match[1]}
+                        PreTag="div"
+                        {...props}
+                      />
+                    ) : (
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              />
+            </Card.Text>
           </>
         )}
       </div>
