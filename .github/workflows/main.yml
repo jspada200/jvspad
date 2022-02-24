@@ -26,7 +26,7 @@ jobs:
           echo SQL_PORT=${{ secrets.SQL_PORT }} >> .env
       - name: make sure secrets are comin through
         run: |
-          cat .env
+          echo This should not be shown but should see somthing...: ${{ secrets.NAMESPACE }}  ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Set environment variables
         run: |
           echo "WEB_IMAGE=$(echo ${{env.WEB_IMAGE}} )" >> $GITHUB_ENV
