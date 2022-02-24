@@ -10,6 +10,7 @@ jobs:
   build:
     name: Build Docker Images
     runs-on: ubuntu-latest
+    environment: main
     steps:
       - name: Checkout master
         uses: actions/checkout@v1
@@ -29,7 +30,7 @@ jobs:
           echo "WEB_IMAGE=$(echo ${{env.WEB_IMAGE}} )" >> $GITHUB_ENV
           echo "NGINX_IMAGE=$(echo ${{env.NGINX_IMAGE}} )" >> $GITHUB_ENV
       - name: Log in to GitHub Packages
-        run: docker login ghcr.io -u ${{ secrets.NAMESPACE }} -p ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: echo ${PERSONAL_ACCESS_TOKEN} | docker login ghcr.io -u ${{ secrets.NAMESPACE }} --password-stdin
         env:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Pull images
