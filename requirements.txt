@@ -15,9 +15,9 @@ django==4.0.2
     #   djangorestframework
 django-cors-headers==3.11.0
     # via -r requirements.in
-django-markupfield==2.0.1
-    # via -r requirements.in
 djangorestframework==3.13.1
+    # via -r requirements.in
+gunicorn==20.1.0
     # via -r requirements.in
 pep517==0.12.0
     # via pip-tools
