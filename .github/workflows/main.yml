@@ -24,6 +24,9 @@ jobs:
           echo SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} >> .env
           echo SQL_HOST=${{ secrets.SQL_HOST }} >> .env
           echo SQL_PORT=${{ secrets.SQL_PORT }} >> .env
+      - name: make sure secrets are comin through
+        run: |
+          cat .env
       - name: Set environment variables
         run: |
           echo "WEB_IMAGE=$(echo ${{env.WEB_IMAGE}} )" >> $GITHUB_ENV
