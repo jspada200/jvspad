@@ -89,5 +89,6 @@ jobs:
             docker login ghcr.io -u $NAMESPACE -p $PERSONAL_ACCESS_TOKEN
             docker pull $WEB_IMAGE
             docker pull $NGINX_IMAGE
-            docker-compose -f docker-compose.ci.yml up -d >> log
+            docker-compose -f docker-compose.ci.yml run web python3 manage.py migrate
+            docker-compose -f docker-compose.ci.yml up -d 
           ENDSSH
