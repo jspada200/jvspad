@@ -69,11 +69,12 @@ jobs:
       - name: Add the private SSH key to the ssh-agent
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+          echo "${SSH_PRIVATE_KEY}" | ssh-add -
       - name: Build and deploy images on DigitalOcean
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
