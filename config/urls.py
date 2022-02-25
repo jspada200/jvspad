@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("admin-casper/", admin.site.urls),
+    path("casper/", admin.site.urls),
     path("api/v1/", include("pages.urls")),
 ]
 
