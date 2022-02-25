@@ -27,8 +27,8 @@ services:
       - SQL_PASSWORD=postgres
       - SQL_HOST=db
       - SQL_PORT=5432
-      - DJ_SECRET_KEY='localprodkey'
-      - DJ_DEBUG=1
+      - SECRET_KEY='localprodkey'
+      - DEBUG=1
     depends_on:
       db:
         condition: service_healthy
