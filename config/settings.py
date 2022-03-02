@@ -31,8 +31,10 @@ ALLOWED_HOSTS = ["*"]
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
+    CSRF_TRUSTED_ORIGINS = ["*"]
 else:
-    CORS_ALLOWED_ORIGIN_REGEXES = []
+    CORS_ALLOWED_ORIGIN_REGEXES = ["*"]
+    CSRF_TRUSTED_ORIGINS = ["*"]
 
 # Application definition
 
