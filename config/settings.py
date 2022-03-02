@@ -33,8 +33,8 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
     CSRF_TRUSTED_ORIGINS = ["*"]
 else:
-    CORS_ALLOWED_ORIGIN_REGEXES = ["*"]
-    CSRF_TRUSTED_ORIGINS = ["*"]
+    CORS_ALLOWED_ORIGIN_REGEXES = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app"]
+    CSRF_TRUSTED_ORIGINS = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app"]
 
 # Application definition
 
