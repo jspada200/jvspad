@@ -26,15 +26,15 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG")))
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app"]
 
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
-    CSRF_TRUSTED_ORIGINS = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app/"]
+    CSRF_TRUSTED_ORIGINS = ["https://jvspad-api-ch8ep.ondigitalocean.app"]
 else:
     CORS_ALLOW_ALL_ORIGINS = True
-    CSRF_TRUSTED_ORIGINS = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app/"]
+    CSRF_TRUSTED_ORIGINS = ["https://jvspad-api-ch8ep.ondigitalocean.app"]
 
 # Application definition
 
