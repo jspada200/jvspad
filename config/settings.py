@@ -31,10 +31,10 @@ ALLOWED_HOSTS = ["*"]
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
-    CSRF_TRUSTED_ORIGINS = ["*"]
+    CSRF_TRUSTED_ORIGINS = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app/"]
 else:
     CORS_ALLOW_ALL_ORIGINS = True
-    CSRF_TRUSTED_ORIGINS = ["*"]
+    CSRF_TRUSTED_ORIGINS = ["*", "https://jvspad-api-ch8ep.ondigitalocean.app/"]
 
 # Application definition
 
