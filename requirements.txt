@@ -6,19 +6,32 @@
 #
 asgiref==3.5.0
     # via django
+boto3==1.21.11
+    # via -r requirements.in
+botocore==1.24.11
+    # via
+    #   boto3
+    #   s3transfer
 click==8.0.3
     # via pip-tools
 django==4.0.2
     # via
     #   -r requirements.in
     #   django-cors-headers
+    #   django-storages
     #   djangorestframework
 django-cors-headers==3.11.0
+    # via -r requirements.in
+django-storages==1.12.3
     # via -r requirements.in
 djangorestframework==3.13.1
     # via -r requirements.in
 gunicorn==20.1.0
     # via -r requirements.in
+jmespath==0.10.0
+    # via
+    #   boto3
+    #   botocore
 pep517==0.12.0
     # via pip-tools
 pillow==9.0.1
@@ -29,12 +42,20 @@ pip-tools==6.5.1
     # via -r requirements.in
 psycopg2==2.9.3
     # via -r requirements.in
+python-dateutil==2.8.2
+    # via botocore
 pytz==2021.3
     # via djangorestframework
+s3transfer==0.5.2
+    # via boto3
+six==1.16.0
+    # via python-dateutil
 sqlparse==0.4.2
     # via django
 tomli==2.0.1
     # via pep517
+urllib3==1.26.8
+    # via botocore
 wheel==0.37.1
     # via pip-tools
 whitenoise==6.0.0

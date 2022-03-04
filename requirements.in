@@ -10,3 +10,7 @@ gunicorn==20.1.0
 # Env tools
 pip-tools==6.5.1
 pip-lock==2.8.1
+
+# Sotrage
+boto3==1.21.11
+django-storages==1.12.3
