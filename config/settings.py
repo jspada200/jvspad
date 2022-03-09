@@ -148,10 +148,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Whitenoise static file storage
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-
 USE_SPACES = os.getenv('USE_SPACES') == 'TRUE'
 
 if USE_SPACES:
