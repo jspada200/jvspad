@@ -158,14 +158,12 @@ if USE_SPACES:
     AWS_DEFAULT_ACL = "public-read"
     AWS_S3_ENDPOINT_URL = "https://sfo3.digitaloceanspaces.com"
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
-    # static settings
-    AWS_LOCATION = "static"
-    STATIC_URL = f"https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/"
-    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-else:
-    STATIC_URL = "/static/"
-    STATIC_ROOT = BASE_DIR / "staticfiles"
 
+
+# Whitenoise static file storage
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles" 
 STATICFILES_DIRS = (BASE_DIR / "static",)
 
 MEDIA_URL = "/media/"
