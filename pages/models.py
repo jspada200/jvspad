@@ -13,5 +13,8 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(blank=True)
 
+    class Meta:
+        ordering = ('-created_at',)
+
     def __str__(self):
         return self.title
